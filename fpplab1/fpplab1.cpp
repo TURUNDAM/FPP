@@ -47,7 +47,7 @@ int main()
 
 #pragma omp paralel for 
 	for (int i =0;i<vector_a.size()&&i<vector_b.size();i++) 
-			result1 += abs(vector_a[i] * vector_b[i]);
+			result1 += fabs(vector_a[i] * vector_b[i]);
 	
 	double time_of_openmp2 = omp_get_wtime();
 
@@ -56,7 +56,7 @@ int main()
 	int result2 = 0;
 	double time_of_function1 = omp_get_wtime();
 	for (int i = 0; i < vector_a.size() && i < vector_b.size(); i++)
-		result2 += abs(vector_a[i] * vector_b[i]);
+		result2 += fabs(vector_a[i] * vector_b[i]);
 	double time_of_function2 = omp_get_wtime();
 
 	cout << endl << "Time of compiling without OpenMP = " << time_of_function2 - time_of_function1;
